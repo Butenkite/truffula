@@ -4,6 +4,9 @@ As part of Wave 0, please fill out notes for each of the below files. They are i
 PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 
 ## App.java
+    prints the directory tree
+    uses options to use color and show hidden files.
+
 
 ## ConsoleColor.java
 
