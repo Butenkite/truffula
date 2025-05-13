@@ -25,5 +25,10 @@ For example, this will see if a no-color flag is raised and be the thing that si
 This interacts directly with the command line.
 
 ## TruffulaPrinter.java / TruffulaPrinterTest.java
+managing which options are being used, and printing tree accordingly.
+sets up defaults for color.
+uses ColorPrinter instead of system.out.
+
 
 ## AlphabeticalFileSorter.java
+takes in an array of files, and sorts them in alphabetical and returns the array.
