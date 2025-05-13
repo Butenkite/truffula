@@ -9,6 +9,9 @@ PLEASE MAKE FREQUENT COMMITS AS YOU FILL OUT THIS FILE.
 
 
 ## ConsoleColor.java
+uses enums escape code for console text
+used to create colors that can be added to strings to color them in the console.
+
 
 ## ColorPrinter.java / ColorPrinterTest.java
 
