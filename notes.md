@@ -14,6 +14,10 @@ used to create colors that can be added to strings to color them in the console.
 
 
 ## ColorPrinter.java / ColorPrinterTest.java
+creates a printstream object from the directory and assigns colors to each line of the printstream.
+also handles resetting to a 'default' color value if assumed.
+primarily we will implementing a method to print from the printstream and assigning color values through consolecolor.
+
 
 ## TruffulaOptions.java / TruffulaOptionsTest.java
 
