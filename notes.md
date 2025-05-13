@@ -20,6 +20,9 @@ primarily we will implementing a method to print from the printstream and assign
 
 
 ## TruffulaOptions.java / TruffulaOptionsTest.java
+handles recieving data from the command line and actually understand what we will be doing with that data. 
+For example, this will see if a no-color flag is raised and be the thing that signals the rest of the program that it is raised.
+This interacts directly with the command line.
 
 ## TruffulaPrinter.java / TruffulaPrinterTest.java
 
