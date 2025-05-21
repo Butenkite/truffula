@@ -116,15 +116,16 @@ public class TruffulaOptions  {
         case "-nc":
           color = false;
           break;
-      
+
         default:
-          throw new IllegalArgumentException("Unknown arguments");
+          throw new IllegalArgumentException("unknown args");
       }
     }
-    if(args[args.length - 1].contains("/")){
+    
+    if(!args[args.length - 1].contains("\\")){
       throw new IllegalArgumentException("unknown args or missing path");
-
     }
+    
     //get file from directory then update root
     File newFile = new File(args[args.length - 1]);
     if(!newFile.isDirectory()){
