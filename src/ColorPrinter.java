@@ -80,14 +80,6 @@ public class ColorPrinter {
   }
 
   /**
-   * Prints the given message in the current color without appending a newline.
-   * Optionally resets the color after printing based on the reset parameter.
-   * In this wave you will implement a class that can print text to the console in color. To achieve this you implement `print(String message, boolean reset)` in `ColorPrinter.java`. You do not need to alter the other methods.
-  Hints:
-  - You will make use of `ConsoleColor.java`. It is an enum, which we haven't covered in class yet. Look at it with curiosity and do some minor research on what enums are in Java. You do not need to modify this file.
-  - Look at `ColorPrinterTest.java` for an example of how to use `ConsoleColor`
-  - Consider adding a main method to `ColorPrinter.java` so you can experiment with how it works and what it looks like on the command line.
-
   YOU MUST ALSO IMPLEMENT THOROUGH UNIT TESTS!!!
    * @param message the message to print
    * @param reset   if true, resets the color after printing; if false, keeps the current color
