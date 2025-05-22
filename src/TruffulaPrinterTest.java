@@ -166,6 +166,7 @@ public class TruffulaPrinterTest {
         //       README.md
         //    zebra.txt
 
+        
         // Create "myFolder"
         File myFolder = new File(tempDir, "myFolder");
         assertTrue(myFolder.mkdir(), "myFolder should be created");
