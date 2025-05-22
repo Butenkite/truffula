@@ -113,9 +113,6 @@ public class TruffulaPrinter {
     // - For Wave 6: Use AlphabeticalFileSorter
     // DO NOT USE SYSTEM.OUT.PRINTLN
     // USE out.println instead (will use your ColorPrinter)
-
-    out.println("printTree was called!");
-    out.println("My options are: " + options);
   }
 
   public void printTree(File current, String depth){
@@ -124,7 +121,7 @@ public class TruffulaPrinter {
     //print
     //if(hidden) print some stuff
     //if(color) print some stuff with color
-    out.println(depth + current.getName());
+    out.println(depth + current.getName() + "/");
     depth += "   ";
     for(File child : children){
       if(child.isDirectory()) {
