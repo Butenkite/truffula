@@ -104,7 +104,7 @@ public class TruffulaPrinter {
    *    zebra.txt
    */
   public void printTree() {
-    printTree(options.getRoot());
+    printTree(options.getRoot(), "");
     // TODO: Implement this!
     // REQUIRED: ONLY use java.io, DO NOT use java.nio
     
@@ -118,22 +118,20 @@ public class TruffulaPrinter {
     out.println("My options are: " + options);
   }
 
-  public void printTree(File current){
+  public void printTree(File current, String depth){
     File[] children= current.listFiles();
     if(children.length == 0) return;
     //print
     //if(hidden) print some stuff
     //if(color) print some stuff with color
-    out.println(current.getName());
+    out.println(depth + current.getName());
+    depth += "   ";
     for(File child : children){
       if(child.isDirectory()) {
-        printTree(child);
+        printTree(child, depth);
       } else{
-        out.println(child.getName());
+        out.println(depth + child.getName());
       }
-      
     }
-
   }
-
 }
