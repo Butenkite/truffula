@@ -1,5 +1,6 @@
 import java.io.PrintStream;
 import java.util.List;
+import java.io.*;
 
 /**
  * TruffulaPrinter is responsible for printing a directory tree structure
@@ -103,6 +104,7 @@ public class TruffulaPrinter {
    *    zebra.txt
    */
   public void printTree() {
+    printTree(options.getRoot());
     // TODO: Implement this!
     // REQUIRED: ONLY use java.io, DO NOT use java.nio
     
@@ -115,4 +117,23 @@ public class TruffulaPrinter {
     out.println("printTree was called!");
     out.println("My options are: " + options);
   }
+
+  public void printTree(File current){
+    File[] children= current.listFiles();
+    if(children.length == 0) return;
+    //print
+    //if(hidden) print some stuff
+    //if(color) print some stuff with color
+    out.println(current.getName());
+    for(File child : children){
+      if(child.isDirectory()) {
+        printTree(child);
+      } else{
+        out.println(child.getName());
+      }
+      
+    }
+
+  }
+
 }
