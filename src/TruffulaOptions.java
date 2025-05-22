@@ -122,7 +122,7 @@ public class TruffulaOptions  {
       }
     }
     
-    if(!args[args.length - 1].contains("\\")){
+    if(!(args[args.length - 1].contains("\\") || args[args.length - 1].contains("/"))){
       throw new IllegalArgumentException("unknown args or missing path");
     }
     

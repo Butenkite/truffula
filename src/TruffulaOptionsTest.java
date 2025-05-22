@@ -37,7 +37,7 @@ public class TruffulaOptionsTest {
     String directoryPath = directory.getAbsolutePath();
     System.out.println(directoryPath);
     String[] args = {directoryPath};
-
+    System.out.println(args[0]);
     // Act: Create TruffulaOptions instance
     TruffulaOptions options = new TruffulaOptions(args);
 
