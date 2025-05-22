@@ -122,9 +122,12 @@ public class TruffulaOptions  {
       }
     }
     
-    if(!(args[args.length - 1].contains("\\") || args[args.length - 1].contains("/"))){
+    if(args[args.length - 1].equals("-h")|| args[args.length - 1].equals("-nc")){
       throw new IllegalArgumentException("unknown args or missing path");
     }
+    // if(!(args[args.length - 1].contains("\\") || args[args.length - 1].contains("/"))){
+      
+    // }
     
     //get file from directory then update root
     File newFile = new File(args[args.length - 1]);
