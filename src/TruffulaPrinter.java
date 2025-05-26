@@ -122,7 +122,7 @@ public class TruffulaPrinter {
 
   public void printTree(File current, String depth, int layer) {
     File[] children = current.listFiles();
-    
+    if(children == null) return;
    
     out.setCurrentColor(colorSequence.get(layer));
     
