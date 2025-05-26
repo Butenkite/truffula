@@ -122,7 +122,8 @@ public class TruffulaPrinter {
 
   public void printTree(File current, String depth, int layer) {
     File[] children = current.listFiles();
-    File[] sortChildren = AlphabeticalFileSorter.sort(children);
+    
+   
     out.setCurrentColor(colorSequence.get(layer));
     
     // print
@@ -136,7 +137,11 @@ public class TruffulaPrinter {
       }else{
         out.println(depth + current.getName());
       }
-      
+
+      if((children.length == 0)) {
+      return;
+      } 
+    File[] sortChildren = AlphabeticalFileSorter.sort(children);
       if (sortChildren.length == 0)
       return;
       // file hidden show hidden
