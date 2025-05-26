@@ -122,33 +122,29 @@ public class TruffulaPrinter {
 
   public void printTree(File current, String depth) {
     File[] children = current.listFiles();
-    if (children.length == 0)
-      return;
+
+    
     // print
 
-    // if(color) print some stuff with color
-
-    if (options.isShowHidden()) {
-      out.println(depth + current.getName() + "/");
-      depth += "   ";
-      for (File child : children) {
-        if (child.isDirectory()) {
-          printTree(child, depth);
-        } else {
-          out.println(depth + child.getName());
-        }
-      }
+    // file hidden no show hidden
+    if (current.isHidden() && !options.isShowHidden()) {
+      return;
     } else {
-        if(!current.isHidden()){
-        out.println(depth + current.getName() + "/");
-        depth += "   ";
-        for (File child : children) {
-          if (child.isDirectory()) {
-            printTree(child, depth);
-          } else {
-            out.println(depth + child.getName());
-          }
-        }
+      depth += "   ";
+      out.println(depth + current.getName());
+      if (children.length == 0)
+      return;
+      // file hidden show hidden
+      // file not hidden no show hidden
+      // file not hidden show hidden
+      for (File child : children) {
+
+ 
+          printTree(child, depth);
+        
+
+        
+
       }
     }
   }
