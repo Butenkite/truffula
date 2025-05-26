@@ -130,18 +130,30 @@ public class TruffulaPrinter {
     if (current.isHidden() && !options.isShowHidden()) {
       return;
     } else {
-      depth += "   ";
-      out.println(depth + current.getName());
+      if(current.isDirectory()){
+        out.println(depth + current.getName() + "/");
+      }else{
+        out.println(depth + current.getName());
+      }
+      
       if (children.length == 0)
       return;
       // file hidden show hidden
       // file not hidden no show hidden
       // file not hidden show hidden
+      depth += "   ";
       for (File child : children) {
 
- 
+        if (child.isDirectory()) {
           printTree(child, depth);
-        
+        } else {
+          if(child.isHidden() && !options.isShowHidden()){
+            
+          } else{
+            out.println(depth + child.getName());
+          }
+          
+        }
 
         
 
