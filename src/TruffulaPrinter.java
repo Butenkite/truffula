@@ -148,10 +148,10 @@ public class TruffulaPrinter {
       out.setCurrentColor(colorSequence.get(layer));
        
       for (File child : sortChildren) {
-
         if (child.isDirectory()) {
           printTree(child, depth, layer);
         } else {
+          out.setCurrentColor(colorSequence.get(layer));
           if(child.isHidden() && !options.isShowHidden()){
             
           } else{
@@ -159,6 +159,7 @@ public class TruffulaPrinter {
           } 
         }
       }
+
     }
   }
 }
