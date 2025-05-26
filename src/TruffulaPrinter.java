@@ -122,6 +122,8 @@ public class TruffulaPrinter {
 
   public void printTree(File current, String depth, int layer) {
     File[] children = current.listFiles();
+    File[] sortChildren = AlphabeticalFileSorter.sort(children);
+
     
     
     // print
@@ -136,7 +138,7 @@ public class TruffulaPrinter {
         out.println(colorSequence.get(layer) + depth + current.getName());
       }
       
-      if (children.length == 0)
+      if (sortChildren.length == 0)
       return;
       // file hidden show hidden
       // file not hidden no show hidden
@@ -145,7 +147,7 @@ public class TruffulaPrinter {
       layer++;
       if(layer>2 || !options.isUseColor()) layer = 0;
        
-      for (File child : children) {
+      for (File child : sortChildren) {
 
         if (child.isDirectory()) {
           printTree(child, depth, layer);
