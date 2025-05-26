@@ -109,7 +109,7 @@ public class TruffulaPrinter {
    * zebra.txt
    */
   public void printTree() {
-    printTree(options.getRoot(), "");
+    printTree(options.getRoot(), "", 0);
     // TODO: Implement this!
     // REQUIRED: ONLY use java.io, DO NOT use java.nio
 
@@ -120,9 +120,9 @@ public class TruffulaPrinter {
     // USE out.println instead (will use your ColorPrinter)
   }
 
-  public void printTree(File current, String depth) {
+  public void printTree(File current, String depth, int layer) {
     File[] children = current.listFiles();
-
+    
     
     // print
 
@@ -131,9 +131,9 @@ public class TruffulaPrinter {
       return;
     } else {
       if(current.isDirectory()){
-        out.println(depth + current.getName() + "/");
+        out.println(colorSequence.get(layer) + depth + current.getName() + "/");
       }else{
-        out.println(depth + current.getName());
+        out.println(colorSequence.get(layer) + depth + current.getName());
       }
       
       if (children.length == 0)
@@ -142,21 +142,21 @@ public class TruffulaPrinter {
       // file not hidden no show hidden
       // file not hidden show hidden
       depth += "   ";
+      layer++;
+      if(layer>2 || !options.isUseColor()) layer = 0;
+       
       for (File child : children) {
 
         if (child.isDirectory()) {
-          printTree(child, depth);
+          printTree(child, depth, layer);
         } else {
           if(child.isHidden() && !options.isShowHidden()){
             
           } else{
-            out.println(depth + child.getName());
+            out.println(colorSequence.get(layer) + depth + child.getName());
           }
           
         }
-
-        
-
       }
     }
   }
