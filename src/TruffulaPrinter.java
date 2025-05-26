@@ -119,8 +119,25 @@ public class TruffulaPrinter {
     File[] children= current.listFiles();
     if(children.length == 0) return;
     //print
-    //if(hidden) print some stuff
+   
     //if(color) print some stuff with color
+
+
+    if(current.isHidden()){ 
+      if(options.isShowHidden()){
+        out.println(depth + current.getName() + "/");
+        depth += "   ";
+      for(File child : children){
+        if(child.isDirectory()) {
+          printTree(child, depth);
+        } else{
+          out.println(depth + child.getName());
+        }
+      }
+    }
+    }
+
+    //no color yes show hidden
     out.println(depth + current.getName() + "/");
     depth += "   ";
     for(File child : children){
@@ -131,4 +148,6 @@ public class TruffulaPrinter {
       }
     }
   }
+
+  
 }
